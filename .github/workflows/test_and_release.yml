@@ -119,7 +119,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v3
         with:
-          images: dashpay/insight-api
+          images: gobytecoin/insight-api
           tags: |
             type=match,pattern=v(\d+),group=1
             type=match,pattern=v(\d+.\d+),group=1
@@ -141,7 +141,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          build-args: VERSION=${{ github.event.release.tag_name }}  
+          build-args: VERSION=${{ github.event.release.tag_name }}
 
       # https://github.com/docker/build-push-action/issues/252
       # https://github.com/moby/buildkit/issues/1896

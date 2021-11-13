@@ -10,11 +10,11 @@ RUN apk add --update --no-cache \
 
 WORKDIR /insight
 
-# Copy dashcore-node
-RUN git clone --branch master --single-branch --depth 1 https://github.com/dashevo/dashcore-node.git .
+# Copy gobytecore-node
+RUN git clone --branch master --single-branch --depth 1 https://github.com/gobytecoin/gobytecore-node.git .
 
 # Copy config file
-COPY dashcore-node.json .
+COPY gobytecore-node.json .
 
 ARG VERSION
 
@@ -22,11 +22,11 @@ ARG VERSION
 RUN npm ci
 
 # Install Insight API module
-RUN bin/dashcore-node install @dashevo/insight-api@${VERSION}
+RUN bin/gobytecore-node install @gobytecoin/insight-api@${VERSION}
 
 FROM node:8-alpine
 
-LABEL maintainer="Dash Developers <dev@dash.org>"
+LABEL maintainer="GoByte Developers <dev@gobyte.network>"
 LABEL description="Dockerised Insight API"
 
 WORKDIR /insight
@@ -36,4 +36,4 @@ COPY --from=0 /insight/ .
 
 EXPOSE 3001
 
-CMD ["bin/dashcore-node", "start"]
+CMD ["bin/gobytecore-node", "start"]

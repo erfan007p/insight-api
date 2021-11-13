@@ -1,8 +1,8 @@
 {
-  "name": "@dashevo/insight-api",
-  "description": "A Dash blockchain REST and WebSocket API Service",
+  "name": "@gobytecoin/insight-api",
+  "description": "A GoByte blockchain REST and WebSocket API Service",
   "version": "3.1.2",
-  "repository": "git://github.com/dashevo/insight-api.git",
+  "repository": "git://github.com/gobytecoin/insight-api.git",
   "contributors": [
     {
       "name": "Gustavo Cortez",
@@ -38,19 +38,19 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/dashevo/insight-api/issues"
+    "url": "https://github.com/gobytecoin/insight-api/issues"
   },
-  "homepage": "https://github.com/dashevo/insight-api",
+  "homepage": "https://github.com/gobytecoin/insight-api",
   "license": "MIT",
   "keywords": [
     "insight",
     "insight api",
     "blockchain",
-    "dash api",
+    "gobyte api",
     "blockchain api",
     "json",
-    "bitcore-dash",
-    "dashcore"
+    "bitcore-gobyte",
+    "gobytecore"
   ],
   "engines": {
     "node": ">=6"
@@ -60,7 +60,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@dashevo/dashcore-lib": "^0.19.25",
+    "@gobytecoin/gobytecore-lib": "^0.19.25",
     "async": "^2.6.2",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
