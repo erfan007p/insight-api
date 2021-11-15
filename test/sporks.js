@@ -8,20 +8,18 @@ describe('Spork', function () {
 	describe('/spork', function () {
 		var SporkList = {
 			"sporks": {
-				"SPORK_2_INSTANTSEND_ENABLED": 0,
-				"SPORK_3_INSTANTSEND_BLOCK_FILTERING": 0,
-				"SPORK_5_INSTANTSEND_MAX_VALUE": 2000,
-				"SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT": 0,
-				"SPORK_9_SUPERBLOCKS_ENABLED": 0,
-				"SPORK_10_MASTERNODE_PAY_UPDATED_NODES": 0,
-				"SPORK_12_RECONSIDER_BLOCKS": 0,
-				"SPORK_13_OLD_SUPERBLOCK_FLAG": 4070908800,
-				"SPORK_14_REQUIRE_SENTINEL_FLAG": 4070908800
+				"SPORK_2_INSTANTSEND_ENABLED": 1622899900,
+				"SPORK_3_INSTANTSEND_BLOCK_FILTERING": 1622899999,
+				"SPORK_9_SUPERBLOCKS_ENABLED": 1622900117,
+				"SPORK_17_QUORUM_DKG_ENABLED": 1622900070,
+				"SPORK_19_CHAINLOCKS_ENABLED": 1622900100,
+				"SPORK_21_QUORUM_ALL_CONNECTED": 1622900128,
+				"SPORK_22_PS_MORE_PARTICIPANTS": 1622900128
 			}
 		};
 		var node = {
 			services: {
-        dashd: {
+        gobyted: {
 					getSpork: sinon.stub().callsArgWith(0, null, SporkList)
 				}
 			}
@@ -36,13 +34,11 @@ describe('Spork', function () {
 					should.exist(data.sporks);
 					should.exist(data.sporks.SPORK_2_INSTANTSEND_ENABLED);
 					should.exist(data.sporks.SPORK_3_INSTANTSEND_BLOCK_FILTERING);
-					should.exist(data.sporks.SPORK_5_INSTANTSEND_MAX_VALUE);
-					should.exist(data.sporks.SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT);
 					should.exist(data.sporks.SPORK_9_SUPERBLOCKS_ENABLED);
-					should.exist(data.sporks.SPORK_10_MASTERNODE_PAY_UPDATED_NODES);
-					should.exist(data.sporks.SPORK_12_RECONSIDER_BLOCKS);
-					should.exist(data.sporks.SPORK_13_OLD_SUPERBLOCK_FLAG);
-					should.exist(data.sporks.SPORK_14_REQUIRE_SENTINEL_FLAG);
+					should.exist(data.sporks.SPORK_17_QUORUM_DKG_ENABLED);
+					should.exist(data.sporks.SPORK_19_CHAINLOCKS_ENABLED);
+					should.exist(data.sporks.SPORK_21_QUORUM_ALL_CONNECTED);
+					should.exist(data.sporks.SPORK_22_PS_MORE_PARTICIPANTS);
 					done();
 				}
 			};
